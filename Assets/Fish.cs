@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fish : MonoBehaviour
 {
@@ -14,11 +13,19 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      bool pressedFireButton =  Input.GetButtonDown("Fire1");
-      if(pressedFireButton) {
-          Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
-          rigidBody.velocity = Vector3.zero;
-          rigidBody.AddForce(Vector3.up * _forceMultiplyer);
-      }
+        bool pressedFireButton = Input.GetButtonDown("Fire1");
+        float upperLimit = 6f;
+        float lowerLimit = -6f;
+        if (pressedFireButton)
+        {
+            Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+            rigidBody.velocity = Vector3.zero;
+            rigidBody.AddForce(Vector3.up * _forceMultiplyer);
+
+            if (transform.position.y > upperLimit || transform.position.y < lowerLimit)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 }
