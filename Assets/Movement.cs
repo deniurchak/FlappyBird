@@ -3,7 +3,10 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 2.5f;
+    private float speed = 5f;
+
+    [SerializeField]
+    private bool changeYPosition = false;
     // Update is called once per frame
     void Update()
     {
@@ -11,9 +14,9 @@ public class Movement : MonoBehaviour
         float screenRightEdgeX = 10f;
         transform.Translate(Vector3.left * Time.deltaTime * speed);
         if (transform.position.x < screenLeftEdgeX)
-        {   
-            float randomYPosition = UnityEngine.Random.Range(0,3);
-            transform.position = new Vector3(screenRightEdgeX, randomYPosition, 0);
+        {
+            float YPosition = changeYPosition ? UnityEngine.Random.Range(0, 3) : transform.position.y;
+            transform.position = new Vector3(screenRightEdgeX, YPosition, transform.position.z);
         }
     }
 }
