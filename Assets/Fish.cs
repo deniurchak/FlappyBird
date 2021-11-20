@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Fish : MonoBehaviour
 {
@@ -24,7 +23,7 @@ public class Fish : MonoBehaviour
 
             if (transform.position.y > upperLimit || transform.position.y < lowerLimit)
             {
-                SceneManager.LoadScene(0);
+                GameLoop.onDeath();
             }
         }
     }

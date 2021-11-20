@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
     
 
 public class SeaweedCollisionHandler : MonoBehaviour
-{
+{   
     void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene(0);
+         GameLoop.onDeath();
     }
 }
