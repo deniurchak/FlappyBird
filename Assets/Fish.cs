@@ -4,6 +4,10 @@ public class Fish : MonoBehaviour
 {
     [SerializeField]
     private float _forceMultiplyer = 100f;
+
+
+    private bool _pressedFireButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,10 +16,19 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool pressedFireButton = Input.GetButtonDown("Fire1");
+        _pressedFireButton = Input.GetButton("Fire1");
+    }
+
+    void FixedUpdate()
+    {
+        Flap();
+    }
+
+    void Flap()
+    {
         float upperLimit = 6f;
         float lowerLimit = -6f;
-        if (pressedFireButton)
+        if (_pressedFireButton)
         {
             Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
             rigidBody.velocity = Vector3.zero;
