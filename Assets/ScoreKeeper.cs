@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class ScoreKeeper : MonoBehaviour
 {
 
-    private int currentScore = 0;
+    private int _currentScore = 0;
 
-    private void incrementScore() {
-        currentScore++;
+    public void incrementScore() {
+        _currentScore++;
         Text scoreText = GetComponent<Text>();
-        scoreText.text = "Score: " + currentScore.ToString();
+        scoreText.text = "Score: " + _currentScore.ToString();
     }
 }
