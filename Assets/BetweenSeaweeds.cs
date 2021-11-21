@@ -4,7 +4,8 @@ public class BetweenSeaweeds : MonoBehaviour
 {
     void OnTriggerExit2D(Collider2D other)
     {
-        if (OtherIsTheFish(other))
+
+        if (GameLoop.OtherIsTheFish(other))
         {
             ScoreKeeper scoreKeeper = GameObject.FindObjectOfType<ScoreKeeper>();
             scoreKeeper.incrementScore();
@@ -12,8 +13,4 @@ public class BetweenSeaweeds : MonoBehaviour
 
     }
 
-    bool OtherIsTheFish(Collider2D other)
-    {
-        return (other.GetComponent<Fish>() != null);
-    }
 }

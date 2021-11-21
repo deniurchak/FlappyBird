@@ -30,16 +30,11 @@ public class Bubble : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (OtherIsTheFish(other))
+        if (GameLoop.OtherIsTheFish(other))
         {
             ScoreKeeper scoreKeeper = GameObject.FindObjectOfType<ScoreKeeper>();
             scoreKeeper.increaseScoreBy(_popBubbleIncreaseScore);
             Reset();
         }
-    }
-
-    bool OtherIsTheFish(Collider2D other)
-    {
-        return (other.GetComponent<Fish>() != null);
     }
 }
