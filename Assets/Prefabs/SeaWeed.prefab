@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 2.5
+  _popBubbleIncreaseScore: 5
 --- !u!58 &1243456501
 CircleCollider2D:
   m_ObjectHideFlags: 0
