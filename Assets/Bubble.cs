@@ -5,6 +5,8 @@ public class Bubble : MonoBehaviour
     [SerializeField]
     private float _moveSpeed = 1f;
 
+    [SerializeField]
+    private int _popBubbleIncreaseScore = 5;
     void Start()
     {
         Reset();
@@ -31,7 +33,7 @@ public class Bubble : MonoBehaviour
         if (OtherIsTheFish(other))
         {
             ScoreKeeper scoreKeeper = GameObject.FindObjectOfType<ScoreKeeper>();
-            scoreKeeper.incrementScore();
+            scoreKeeper.increaseScoreBy(_popBubbleIncreaseScore);
             Reset();
         }
     }

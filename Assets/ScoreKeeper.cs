@@ -13,4 +13,10 @@ public class ScoreKeeper : MonoBehaviour
         Text scoreText = GetComponent<Text>();
         scoreText.text = "Score: " + _currentScore.ToString();
     }
+
+    public void increaseScoreBy(int increaseBy) {
+        _currentScore = _currentScore + increaseBy;
+        Text scoreText = GetComponent<Text>();
+        scoreText.text = "Score: " + _currentScore.ToString();
+    }
 }
