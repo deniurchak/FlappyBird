@@ -10,7 +10,7 @@ public class BetweenSeaweeds : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
 
-        if (GameLoop.OtherIsTheFish(other))
+        if (GameManager.OtherIsTheFish(other))
         {
             _scoreKeeper.incrementScore();
         }

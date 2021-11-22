@@ -1,7 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public static class GameLoop 
+public static class GameManager 
 {   
     public static void onDeath()
     {

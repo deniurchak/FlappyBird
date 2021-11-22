@@ -36,7 +36,7 @@ public class Bubble : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (GameLoop.OtherIsTheFish(other))
+        if (GameManager.OtherIsTheFish(other))
         {
             _scoreKeeper.increaseScoreBy(_popBubbleIncreaseScore);
             Reset();

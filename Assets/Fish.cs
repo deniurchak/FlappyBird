@@ -36,7 +36,7 @@ public class Fish : MonoBehaviour
 
             if (transform.position.y > upperLimit || transform.position.y < lowerLimit)
             {
-                GameLoop.onDeath();
+                GameManager.onDeath();
             }
         }
     }
