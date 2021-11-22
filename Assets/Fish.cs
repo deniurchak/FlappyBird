@@ -8,11 +8,12 @@ public class Fish : MonoBehaviour
 
     private bool _pressedFireButton;
 
-    // Start is called before the first frame update
-    void Start()
+    Rigidbody2D _rigidBody;
+    void Awake()
     {
-    }
 
+        _rigidBody = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,9 +31,8 @@ public class Fish : MonoBehaviour
         float lowerLimit = -6f;
         if (_pressedFireButton)
         {
-            Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
-            rigidBody.velocity = Vector3.zero;
-            rigidBody.AddForce(Vector3.up * _forceMultiplyer);
+            _rigidBody.velocity = Vector3.zero;
+            _rigidBody.AddForce(Vector3.up * _forceMultiplyer);
 
             if (transform.position.y > upperLimit || transform.position.y < lowerLimit)
             {

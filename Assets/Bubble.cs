@@ -11,6 +11,12 @@ public class Bubble : MonoBehaviour
     {
         Reset();
     }
+
+    ScoreKeeper _scoreKeeper;
+    void Awake() 
+    {
+        _scoreKeeper = GameObject.FindObjectOfType<ScoreKeeper>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -32,8 +38,7 @@ public class Bubble : MonoBehaviour
     {
         if (GameLoop.OtherIsTheFish(other))
         {
-            ScoreKeeper scoreKeeper = GameObject.FindObjectOfType<ScoreKeeper>();
-            scoreKeeper.increaseScoreBy(_popBubbleIncreaseScore);
+            _scoreKeeper.increaseScoreBy(_popBubbleIncreaseScore);
             Reset();
         }
     }
